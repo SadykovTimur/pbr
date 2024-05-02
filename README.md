@@ -1,4 +1,4 @@
-# pbr
-Autotests for PBR
+# pknd
+Autotests for PKND
 
 

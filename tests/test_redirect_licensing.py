@@ -17,15 +17,15 @@ from tests.steps import (
 
 @allure.label('owner', 't.sadykov')
 @allure.label('component', 'DIT')
-@allure.epic('PBR')
-@allure.story('Перенаправление на страницу "Лицензирование"')
-@allure.title('Проверка загрузки страницы платформы КНД "Лицензирование"')
+@allure.epic('PKND')
+@allure.story('Страница КНД "Лицензирование"')
+@allure.title('Перенаправление на страницу "Лицензирование"')
 @allure.severity(allure.severity_level.BLOCKER)
 @pytest.mark.parametrize('browser', CLIENT_BROWSERS)
 @pytest.mark.parametrize('device_type', CLIENT_DEVICE_TYPE)
-def test_redirect_licensing(
-    request: FixtureRequest, make_app: Callable[..., Application], browser: str, device_type: str
-) -> None:
+def test_redirect_licensing(request: FixtureRequest,
+                            make_app: Callable[..., Application],
+                            browser: str, device_type: str) -> None:
 
     app = make_app(browser, device_type)
 

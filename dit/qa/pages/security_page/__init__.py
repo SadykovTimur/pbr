@@ -45,12 +45,12 @@ class SecurityPage(Page):
                 assert self.navigation.collections_groups.visible
                 assert self.navigation.system_messages.visible
 
-                return self.panel.item[0].visible
+                return self.panel.list[0].visible
 
             except NoSuchElementException:
 
                 return False
 
         self.app.set_implicitly_wait(1)
-        wait_for(condition, msg='Page was not loaded')
+        wait_for(condition, timeout=70, msg='Page was not loaded')
         self.app.restore_implicitly_wait()

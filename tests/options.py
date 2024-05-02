@@ -1,5 +1,5 @@
 def pytest_addoption(parser):
-    group = parser.getgroup('pbr')
+    group = parser.getgroup('pknd')
 
     group.addoption(
         '--browser', dest='browser', metavar='browser', default='chrome', help='Browser. Default option is chrome'

@@ -6,9 +6,9 @@ __all__ = ['Panel']
 
 class PanelWrapper(ComponentWrapper):
     form_group = Components(css='[class*="form-group"]')
-    item = Components(css='[class="list-item-data"]')
-    list = Component(xpath='(//div[@class="list-item-data"])[1]')
-    create_btn = Button(css='button[class="btn btn-primary mr-20"]')
+    # item = Components(css='[class="list-item-data"]')
+    list = Components(class_name='list-item-data')
+    create_btn = Button(css='button[class*="btn btn-primary"]')
     title = Component(xpath="//span[contains(text(),'Профилактика. Профилактический визит. Федеральный ')]")
 
 

@@ -18,15 +18,15 @@ from tests.steps import (
 
 @allure.label('owner', 't.sadykov')
 @allure.label('component', 'DIT')
-@allure.epic('PBR')
-@allure.story('Добавление дела')
-@allure.title('Проверка открытия для выбора справочник "Стандарты"')
+@allure.epic('PKND')
+@allure.story('Страница КНД "КНМ и ПМ"')
+@allure.title('Добавление дела')
 @allure.severity(allure.severity_level.BLOCKER)
 @pytest.mark.parametrize('browser', CLIENT_BROWSERS)
 @pytest.mark.parametrize('device_type', CLIENT_DEVICE_TYPE)
-def test_add_case(
-    request: FixtureRequest, make_app: Callable[..., Application], browser: str, device_type: str
-) -> None:
+def test_add_case(request: FixtureRequest,
+                  make_app: Callable[..., Application],
+                  browser: str, device_type: str) -> None:
 
     app = make_app(browser, device_type)
 

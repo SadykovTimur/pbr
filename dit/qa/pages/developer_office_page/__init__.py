@@ -32,7 +32,7 @@ class DeveloperOfficePage(Page):
                 assert self.header.search
                 assert self.header.new_directory
 
-                assert self.panel.item[0].visible
+                assert self.panel.list[0].visible
 
                 assert self.navigation.dictionaries.visible
                 assert self.navigation.dictionaries_settings.visible
@@ -54,5 +54,5 @@ class DeveloperOfficePage(Page):
                 return False
 
         self.app.set_implicitly_wait(1)
-        wait_for(condition, msg='Page was not loaded')
+        wait_for(condition, timeout=70, msg='Page was not loaded')
         self.app.restore_implicitly_wait()

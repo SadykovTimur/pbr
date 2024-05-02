@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "dit-qa-pbr"
+name = "dit-qa-pknd"
 version = "0.1.0"
-description = "Autotests for PBR"
+description = "Autotests for PKND"
 authors = ["Seregin Andrey <a.seregin@coms.ru>", "Sadykov Timur <t.sadykov@coms.ru>"]
 
 packages = [
@@ -59,7 +59,7 @@ target-version = ['py310']
 
 [tool.isort]
 default_section = 'THIRDPARTY'
-known_third_party = ["pbr"]
+known_third_party = ["pknd"]
 known_application_apps = ['dit', 'tests']
 sections = ['FUTURE', 'STDLIB', 'THIRDPARTY', 'APPLICATION_APPS', 'LOCALFOLDER']
 line_length = 120

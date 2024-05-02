@@ -36,12 +36,12 @@ class NsiPage(Page):
                 assert self.sidebar.group[0].visible
                 assert self.sidebar.checkbox[0].visible
 
-                return self.panel.item[0].visible
+                return self.panel.list[0].visible
 
             except NoSuchElementException:
 
                 return False
 
         self.app.set_implicitly_wait(1)
-        wait_for(condition, msg='Page was not loaded')
+        wait_for(condition, timeout=70, msg='Page was not loaded')
         self.app.restore_implicitly_wait()

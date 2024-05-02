@@ -1,4 +1,5 @@
 from typing import Callable
+
 import allure
 import pytest
 from _pytest.fixtures import FixtureRequest
@@ -16,15 +17,15 @@ from tests.steps import (
 
 @allure.label('owner', 't.sadykov')
 @allure.label('component', 'DIT')
-@allure.epic('PBR')
-@allure.story('Перенаправление на страницу администратора КНО')
-@allure.title('Проверка открытие страницы администратора КНО')
+@allure.epic('PKND')
+@allure.story('Страница КНД "Кабинет администратора КНО"')
+@allure.title('Перенаправление на страницу администратора КНО')
 @allure.severity(allure.severity_level.BLOCKER)
 @pytest.mark.parametrize('browser', CLIENT_BROWSERS)
 @pytest.mark.parametrize('device_type', CLIENT_DEVICE_TYPE)
-def test_redirect_administration_cno(
-    request: FixtureRequest, make_app: Callable[..., Application], browser: str, device_type: str
-) -> None:
+def test_redirect_administration_cno(request: FixtureRequest,
+                                     make_app: Callable[..., Application],
+                                     browser: str, device_type: str) -> None:
 
     app = make_app(browser, device_type)
 

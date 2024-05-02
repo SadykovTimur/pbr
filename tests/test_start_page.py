@@ -11,15 +11,15 @@ from tests.steps import open_start_page
 
 @allure.label('owner', 't.sadykov')
 @allure.label('component', 'DIT')
-@allure.epic('PBR')
+@allure.epic('PKND')
 @allure.story('Стартовая страница')
 @allure.title('Открытие стартовой страницы')
 @allure.severity(allure.severity_level.BLOCKER)
 @pytest.mark.parametrize('browser', CLIENT_BROWSERS)
 @pytest.mark.parametrize('device_type', CLIENT_DEVICE_TYPE)
-def test_start_page(
-    request: FixtureRequest, make_app: Callable[..., Application], browser: str, device_type: str
-) -> None:
+def test_start_page(request: FixtureRequest,
+                    make_app: Callable[..., Application],
+                    browser: str, device_type: str) -> None:
     app = make_app(browser, device_type)
 
     open_start_page(app, request)

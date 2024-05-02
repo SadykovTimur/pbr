@@ -11,15 +11,15 @@ from tests.steps import open_auth_sudir_page, open_start_page, open_start_system
 
 @allure.label('owner', 't.sadykov')
 @allure.label('component', 'DIT')
-@allure.epic('PBR')
-@allure.story('Перенаправление на страницу работы Методолога КНО')
-@allure.title('Проверка загрузки страницы платформы КНД "Кабинет методолога"')
+@allure.epic('PKND')
+@allure.story('Страница КНД "Кабинет методолога"')
+@allure.title('Перенаправление на страницу работы Методолога КНО')
 @allure.severity(allure.severity_level.BLOCKER)
 @pytest.mark.parametrize('browser', CLIENT_BROWSERS)
 @pytest.mark.parametrize('device_type', CLIENT_DEVICE_TYPE)
-def test_redirect_methodology_cno(
-    request: FixtureRequest, make_app: Callable[..., Application], browser: str, device_type: str
-) -> None:
+def test_redirect_methodology_cno(request: FixtureRequest,
+                                  make_app: Callable[..., Application],
+                                  browser: str, device_type: str) -> None:
 
     app = make_app(browser, device_type)
 

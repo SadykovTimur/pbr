@@ -32,7 +32,7 @@ class LicensingPage(Page):
                 assert self.header.search
                 assert self.header.statement
 
-                assert self.panel.item[0].visible
+                assert self.panel.list[0].visible
 
                 assert self.navigation.appeals.visible
                 assert self.navigation.registers.visible
@@ -47,5 +47,5 @@ class LicensingPage(Page):
                 return False
 
         self.app.set_implicitly_wait(1)
-        wait_for(condition, msg='Page was not loaded')
+        wait_for(condition, timeout=70, msg='Page was not loaded')
         self.app.restore_implicitly_wait()

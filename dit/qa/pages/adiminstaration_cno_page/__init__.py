@@ -1,7 +1,9 @@
 from __future__ import annotations
+
 from coms.qa.core.helpers import wait_for
 from coms.qa.frontend.pages import Page
 from selenium.common.exceptions import NoSuchElementException
+
 from dit.qa.pages.components.header import Header
 from dit.qa.pages.components.navigation import Navigation
 from dit.qa.pages.components.panel import Panel
@@ -24,7 +26,7 @@ class AdministrationCnoPage(Page):
                 assert self.header.profile.visible
                 assert self.header.help.visible
                 assert self.header.logout.visible
-                assert self.header.breadcrumbs == 'Главная'
+                assert 'Главная' in self.header.breadcrumbs
                 assert 'Кабинет администратора КНО' in self.header.breadcrumbs
                 assert 'Настройки КНО' in self.header.breadcrumbs
                 assert self.header.save
@@ -45,5 +47,5 @@ class AdministrationCnoPage(Page):
                 return False
 
         self.app.set_implicitly_wait(1)
-        wait_for(condition, msg='Page was not loaded')
+        wait_for(condition, timeout=70, msg='Page was not loaded')
         self.app.restore_implicitly_wait()

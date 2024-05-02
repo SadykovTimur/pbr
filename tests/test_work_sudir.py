@@ -11,15 +11,15 @@ from tests.steps import open_auth_sudir_page, open_start_page
 
 @allure.label('owner', 't.sadykov')
 @allure.label('component', 'DIT')
-@allure.epic('PBR')
-@allure.story('Проверка работы СУДИР')
-@allure.title('Пройти по кнопке "Вход через СУДИР"')
+@allure.epic('PKND')
+@allure.story('Стартовая страница СУДИР')
+@allure.title('Проверка работы СУДИР')
 @allure.severity(allure.severity_level.BLOCKER)
 @pytest.mark.parametrize('browser', CLIENT_BROWSERS)
 @pytest.mark.parametrize('device_type', CLIENT_DEVICE_TYPE)
-def test_work_sudir(
-    request: FixtureRequest, make_app: Callable[..., Application], browser: str, device_type: str
-) -> None:
+def test_work_sudir(request: FixtureRequest,
+                    make_app: Callable[..., Application],
+                    browser: str, device_type: str) -> None:
     app = make_app(browser, device_type)
 
     open_start_page(app, request)

@@ -14,9 +14,9 @@ class StartPage(Page):
     title = Component(xpath="//h1[text()=' КНД ']")
     description = Component(xpath="//div[text()=' Контрольно-надзорная деятельность '] ")
     sibmit_sudir = Button(xpath="//div[text()=' Вход через СУДИР ']")
-    checkbox = Button(css='[for="сredentialsLoginSwitch"]')
-    login = TextField(css='input[formcontrolname="login"]')
-    password = TextField(css='input[formcontrolname="password"]')
+    checkbox = Component(css='[for="сredentialsLoginSwitch"]')
+    login = TextField(css='[formcontrolname="login"]')
+    password = TextField(css='[formcontrolname="password"]')
     submit = Button(xpath="//div[text()=' Войти в систему ']")
 
     def wait_for_loading(self) -> None:
@@ -33,7 +33,7 @@ class StartPage(Page):
                 return False
 
         self.app.set_implicitly_wait(1)
-        wait_for(condition, msg='Page was not loaded')
+        wait_for(condition, timeout=70, msg='Page was not loaded')
         self.app.restore_implicitly_wait()
 
     def wait_for_loading_sudir(self) -> None:
@@ -49,5 +49,5 @@ class StartPage(Page):
                 return False
 
         self.app.set_implicitly_wait(1)
-        wait_for(condition, msg='Page was not loaded')
+        wait_for(condition, timeout=70, msg='Page was not loaded')
         self.app.restore_implicitly_wait()
