@@ -14,7 +14,7 @@ class StartPage(Page):
     title = Component(xpath="//h1[text()=' КНД ']")
     description = Component(xpath="//div[text()=' Контрольно-надзорная деятельность '] ")
     sibmit_sudir = Button(xpath="//div[text()=' Вход через СУДИР ']")
-    checkbox = Component(css='[for="сredentialsLoginSwitch"]')
+    checkbox = Button(css='[for="сredentialsLoginSwitch"]')
     login = TextField(css='[formcontrolname="login"]')
     password = TextField(css='[formcontrolname="password"]')
     submit = Button(xpath="//div[text()=' Войти в систему ']")
