@@ -127,7 +127,6 @@ def redirect_administration_cno(app: Application) -> None:
 def redirect_start_system_page(app: Application) -> None:
     with allure.step('Transition start system page'):
         try:
-            AdministrationCnoPage(app)
             AdministrationCnoPage(app).header.first.click()
 
             StartSystemPage(app).wait_for_loading()
